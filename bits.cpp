@@ -20,6 +20,8 @@
 
 using namespace std;
 
+typedef bitset<8> BYTE;
+
 int main()
 {
 	int n = 0;
