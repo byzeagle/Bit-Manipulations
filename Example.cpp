@@ -64,7 +64,6 @@ using functiontype2 = void (*)();
 using functiontype3 = std::add_pointer<void()>::type;
 
 // Regarding function overloading and function template specialization
-
 int sum(int a, int b)
 {
     cout << "int sum(int a, int b)" << endl;
@@ -89,6 +88,16 @@ int sum<int>(int a, int b)
 {
     cout << "template <> int sum<int>(int a, int b)" << endl;
     return a + b;
+}
+
+void foo(int(&arr)[5])
+{
+
+}
+
+auto foo(int(&arr)[3]) -> int(*)(int, int)
+{
+    return sum;
 }
 
 int main()
@@ -156,6 +165,14 @@ int main()
     sum<int>(2, 3);
     sum(2.0, 3.0);
     sum<double>(2, 3);
+
+    // Function foo test
+    int array[] = { 1, 2, 3 ,4 ,5 };
+    foo(array);
+
+    int array2[] = { 1, 2, 3 };
+    auto sum = foo(array2);
+    sum(1, 2);
 
     return 0;
 }
