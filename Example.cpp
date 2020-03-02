@@ -100,6 +100,12 @@ auto foo(int(&arr)[3]) -> int(*)(int, int)
     return sum;
 }
 
+// Interesting use
+int even[] = { 1,2 };
+decltype(even)* foo2() {
+    return &even;
+}
+
 int main()
 {
     // Template argument deduction test
