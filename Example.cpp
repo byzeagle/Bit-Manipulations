@@ -106,6 +106,25 @@ decltype(even)* foo2() {
     return &even;
 }
 
+using funcType = void(int, int); // Function type
+using funcPointerType = void(*)(int, int); // Function pointer type
+
+funcPointerType foo4()
+{
+
+}
+
+//funcType foo4() { // Error because function types cannot be returned
+//
+//}
+
+// decltype(foo2) is a function type, it cannot be returned
+// decltype(foo2) * is a pointer type, it can be returned
+decltype(foo2)* foo3(int x)
+{
+
+}
+
 int main()
 {
     // Template argument deduction test
