@@ -128,12 +128,6 @@ decltype(foo2)* foo3(int x)
     return foo2;
 }
 
-union ufloat
-{
-    float f;
-    unsigned int u;
-};
-
 int main()
 {
     // Template argument deduction test
@@ -208,18 +202,15 @@ int main()
     auto sum = foo(array2);
     sum(1, 2);
 
-    //double and float binary representations
-    ufloat u1;
-    u1.f = 1.5f;
-
-    ufloat u2;
-    u2.f = 0.3f;
-
-    bitset<32> a(u1.u);
-    bitset<32> b(u2.u);
-
+    // float binary representation with union
+    union
+    {
+        float f;
+        int u;
+    } u1;
+    u1.f = 0.3f;
+    bitset<sizeof(float) * CHAR_BIT> a(u1.u);
     cout << a << endl;
-    cout << b << endl;
 
     return 0;
 }
