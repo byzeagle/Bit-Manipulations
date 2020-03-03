@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <type_traits>
+#include <bitset>
 
 using namespace std;
 
@@ -109,9 +110,11 @@ decltype(even)* foo2() {
 using funcType = void(int, int); // Function type
 using funcPointerType = void(*)(int, int); // Function pointer type
 
+void foo5(int, int) {}
+
 funcPointerType foo4()
 {
-
+    return foo5;
 }
 
 //funcType foo4() { // Error because function types cannot be returned
@@ -122,8 +125,14 @@ funcPointerType foo4()
 // decltype(foo2) * is a pointer type, it can be returned
 decltype(foo2)* foo3(int x)
 {
-
+    return foo2;
 }
+
+union ufloat
+{
+    float f;
+    unsigned int u;
+};
 
 int main()
 {
@@ -198,6 +207,19 @@ int main()
     int array2[] = { 1, 2, 3 };
     auto sum = foo(array2);
     sum(1, 2);
+
+    //double and float binary representations
+    ufloat u1;
+    u1.f = 1.5f;
+
+    ufloat u2;
+    u2.f = 0.3f;
+
+    bitset<32> a(u1.u);
+    bitset<32> b(u2.u);
+
+    cout << a << endl;
+    cout << b << endl;
 
     return 0;
 }
