@@ -213,8 +213,8 @@ int main()
     cout << a << endl;
 
     float f = 0.3f;
-    int* ptr = (int*)&f;
-    bitset<sizeof(float) * CHAR_BIT> b(*ptr);
+    int* pt = (int*)&f;
+    bitset<sizeof(float) * CHAR_BIT> b(*pt);
     cout << b << endl;
 
     return 0;
