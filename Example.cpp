@@ -211,11 +211,15 @@ int main()
     u1.f = 0.3f;
     bitset<sizeof(float) * CHAR_BIT> a(u1.u);
     cout << a << endl;
+    cout << "u1.f : " << u1.f << endl;
+    cout << "u1.u : " << u1.u << endl;
 
     float f = 0.3f;
     int* pt = (int*)&f;
     bitset<sizeof(float) * CHAR_BIT> b(*pt);
     cout << b << endl;
+    cout << "f : " << f << endl;
+    cout << "*pt :" << *pt << endl;
 
     // Conversion through pointer vs direct cast
     int n = -1;
@@ -225,6 +229,17 @@ int main()
     cout << *n2 << endl;
     cout << n3 << endl;
     cout << n4 << endl; // With float, it does not work as expected, gives 0
+
+    // int and float comparison
+    int abc = 12345;
+    float cba = (float)abc;
+    cout << "abc : " << abc << endl;
+    cout << "cba : " << cba << endl;
+    bitset<32> bitsetabc(abc);
+    bitset<32> bitsetcba(*(int*)&cba);
+    cout << "abc bit sequence : " << bitsetabc << endl;
+    cout << "cba bit sequence : " << bitsetcba << endl;
+
 
     return 0;
 }
