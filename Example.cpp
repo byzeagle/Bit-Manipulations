@@ -212,5 +212,10 @@ int main()
     bitset<sizeof(float) * CHAR_BIT> a(u1.u);
     cout << a << endl;
 
+    float f = 0.3f;
+    int* ptr = (int*)&f;
+    bitset<sizeof(float) * CHAR_BIT> b(*ptr);
+    cout << b << endl;
+
     return 0;
 }
