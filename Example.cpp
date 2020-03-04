@@ -221,6 +221,10 @@ int main()
     cout << "f : " << f << endl;
     cout << "*pt :" << *pt << endl;
 
+    f = 5.5f;
+    std::bitset<sizeof(float) * CHAR_BIT> foobitset(*reinterpret_cast<unsigned long*>(&f));
+    cout << "foobitset : " << foobitset << endl;
+
     // Conversion through pointer vs direct cast
     int n = -1;
     unsigned int n3 = (unsigned int)n;
@@ -239,7 +243,6 @@ int main()
     bitset<32> bitsetcba(*(int*)&cba);
     cout << "abc bit sequence : " << bitsetabc << endl;
     cout << "cba bit sequence : " << bitsetcba << endl;
-
 
     return 0;
 }
