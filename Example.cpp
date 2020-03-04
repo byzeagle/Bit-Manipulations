@@ -217,5 +217,14 @@ int main()
     bitset<sizeof(float) * CHAR_BIT> b(*pt);
     cout << b << endl;
 
+    // Conversion through pointer vs direct cast
+    int n = -1;
+    unsigned int n3 = (unsigned int)n;
+    unsigned int* n2 = (unsigned int*)&n;
+    unsigned int n4 = (unsigned int)f;
+    cout << *n2 << endl;
+    cout << n3 << endl;
+    cout << n4 << endl; // With float, it does not work as expected, gives 0
+
     return 0;
 }
