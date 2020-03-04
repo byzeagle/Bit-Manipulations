@@ -118,7 +118,7 @@ funcPointerType foo4()
 }
 
 //funcType foo4() { // Error because function types cannot be returned
-//
+//                  // Array types cannot be returned either
 //}
 
 // decltype(foo2) is a function type, it cannot be returned
@@ -202,7 +202,7 @@ int main()
     auto sum = foo(array2);
     sum(1, 2);
 
-    // float binary representation with union
+    // float binary representation with union and pointer cast
     union
     {
         float f;
