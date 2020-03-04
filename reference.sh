@@ -31,6 +31,15 @@
 # clear
 # history
 
+# id
+# chmod
+# umask
+# su
+# sudo
+# chown
+# chgrp
+# passwd
+
 # clang
 # gcc
 # gdb
@@ -48,22 +57,22 @@
 # tmux
 # htop
 
-# CTRL-a move cursor to the beginning of the line
-# CTRL-e move cursor to the end of the line
-# ALT-f move cursor forward one word
-# ALT-b move cursor backward one word
-# CTRL-l clear screen
-# CTRL-f cursor forward one character
-# CTRL-b cursor backward one character
+# CTRL-a  move cursor to the beginning of the line
+# CTRL-e  move cursor to the end of the line
+# ALT-f   move cursor forward one word
+# ALT-b   move cursor backward one word
+# CTRL-l  clear screen
+# CTRL-f  cursor forward one character
+# CTRL-b  cursor backward one character
 
-# CTRL-d
-# CTRL-t
-# ALT-t
-# ALT-l
-# ALT-u
+# CTRL-d  delete the character at the cursor location
+# CTRL-t  exchange the character
+# ALT-t   exchange the word
+# ALT-l   convert characters to lowercase
+# ALT-u   convert characters to uppercase
 
-# CTRL-k
-# CTRLu
-# ALT-d
-# ALT-Backspace
-# CTRL-y
+# CTRL-k  kill text from cursor loc to the end of file
+# CTRLu   kill text from cursor loc to the the beginning of the file
+# ALT-d   kill text from cursor loc to the end of the current word
+# ALT-Backspace kill text from cursor loc to the beginning of the current word
+# CTRL-y  yank text from the kill-ring and insert it at the cursor location
