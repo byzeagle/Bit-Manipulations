@@ -28,6 +28,12 @@ ls -l $(which cp)
 file $(ls -d /usr/bin/* | grep zip)
 ls -ls `which cp` # syntax in older shell programs
 ls -l ~ /usr
+echo This is a      test
+echo "This is a      test"
+echo The total is $100.00
+echo "$USER $((2 + 2)) $(cal)"
+echo '$USER $((2 + 2)) $(cal)' # Supresses all expansions
+echo "The balance for user $USER is \$5.00"
 
 echo "----type examples----"
 type echo
