@@ -244,5 +244,39 @@ int main()
     cout << "abc bit sequence : " << bitsetabc << endl;
     cout << "cba bit sequence : " << bitsetcba << endl;
 
+    // Overflow cases
+    int deneme = 0x7FFFFFFF;
+    cout << "deneme : " << deneme << endl;
+    cout << "deneme + 1 :" << deneme + 1 << endl;
+
+    unsigned int deneme2 = 0xFFFFFFFF;
+    cout << "deneme2 : " << deneme2 << endl;
+    cout << "deneme2 + 1 : " << deneme2 + 1 << endl;
+
+    // Pointers
+    union {
+        int intArray[3] = { 1, 2 ,3 };
+        unsigned char charArray[12];
+    }u2;
+    cout << "intArray : " << (void*)u2.intArray << endl;
+    cout << "intArray + 1 : " << u2.intArray + 1 << endl;
+    cout << "intArray + 2 : " << u2.intArray + 2 << endl;
+    cout << "intArray + 3 : " << u2.intArray + 3 << endl;
+
+    cout << "charArray : " << (void *)u2.charArray << endl;
+    cout << "charArray + 1 : " << (void*)(u2.charArray + 1) << endl;
+    cout << "charArray + 2 : " << (void*)(u2.charArray + 2)<< endl;
+    cout << "charArray + 3 : " << (void*)(u2.charArray + 3) << endl;
+
+    cout << "charArray[0] : " << (int)u2.charArray[0] << endl;
+    cout << "charArray[1] : " << (int)u2.charArray[1] << endl;
+    cout << "charArray[2] : " << (int)u2.charArray[2] << endl;
+    cout << "charArray[4] : " << (int)u2.charArray[4] << endl;
+    cout << "charArray[8] : " << (int)u2.charArray[8] << endl;
+    cout << "charArray[9] : " << (int)u2.charArray[9] << endl;
+
+    char charString[6] = "Hello";
+    cout << "charString : " << charString << endl;
+
     return 0;
 }
