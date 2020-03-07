@@ -57,6 +57,11 @@
 # tmux
 # htop
 
+# dd
+# fdisk
+# df
+# lsblk
+
 # CTRL-a  move cursor to the beginning of the line
 # CTRL-e  move cursor to the end of the line
 # ALT-f   move cursor forward one word
@@ -76,3 +81,12 @@
 # ALT-d   kill text from cursor loc to the end of the current word
 # ALT-Backspace kill text from cursor loc to the beginning of the current word
 # CTRL-y  yank text from the kill-ring and insert it at the cursor location
+
+# !! repeat the last command
+# !$ last arguments
+# !*
+# !number repeat history list item number
+# !string repeat last history list item starting with string
+# !? repeat last history item containing string
+
+# CTRL-r + CTRL-j
