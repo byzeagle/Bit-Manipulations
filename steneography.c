@@ -27,13 +27,14 @@ void encryptString(char charArray[], int key){
 
 int main(int argc, char * argv[]){
 
-	const char * message = argv[1];
-	char messageArray[strlen(argv[1]) + 1];
+	const char * message = argv[2];
+	const char * file = argv[1];
+	char messageArray[strlen(message) + 1];
 	strcpy(messageArray, message);
-	encryptString(messageArray, 10);
+	encryptString(messageArray, 15);
 
 	/* Get size of the file */
-	FILE *fp = fopen("test.bin", "r+b");
+	FILE *fp = fopen(file, "rb");
 	if(fp == NULL){
 		printf("File does not exist\n");
 		exit(EXIT_FAILURE);
@@ -45,7 +46,7 @@ int main(int argc, char * argv[]){
 	}
 
 	int size = returnSize(fp);
-	int stringSize = strlen(argv[1]);
+	int stringSize = strlen(messageArray);
 	srand(time(NULL));
 
 #ifdef NDEBUG
@@ -54,15 +55,25 @@ int main(int argc, char * argv[]){
 	printf("String size is : %d\n", stringSize);
 #endif
 
-	// int indexTable[stringSize];
+	int indexTable[stringSize];
 	for(int i = 0; i < stringSize; ++i){
 		int randomPos = rand() % size;
-		// indexTable[i] = randomPos;
+		indexTable[i] = randomPos;
 		fseek(fp, randomPos, SEEK_SET);
 		fputc(messageArray[i], fp);
 	}
 
+	// Produce a binary file from indexes
+	FILE * fp2 = fopen("key.bin", "wb");
+	if(fp2 == NULL){
+		printf("key file does not exist\n");
+		exit(EXIT_FAILURE);
+	}
+
+	fwrite(indexTable, sizeof(indexTable), 1, fp2);
+
 	fclose(fp);
+	fclose(fp2);
 
 	return 0;
 }
