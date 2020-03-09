@@ -56,6 +56,8 @@
 # mc
 # tmux
 # htop
+# sqlite3
+# sqlitebrowser
 
 # dd
 # fdisk
