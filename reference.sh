@@ -40,6 +40,15 @@
 # chgrp
 # passwd
 
+# ps
+# top
+# jobs
+# bg
+# fg
+# kill
+# killall
+# shutdown
+
 # clang
 # gcc
 # gdb
