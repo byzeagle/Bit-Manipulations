@@ -8,6 +8,8 @@
 # head
 # tail
 # tee
+# diff
+# patch
 
 # echo
 # type
