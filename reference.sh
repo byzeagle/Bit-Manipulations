@@ -77,6 +77,8 @@
 # lsblk
 # mkfs
 # parted
+# gparted
+# mkfs
 
 # CTRL-a  move cursor to the beginning of the line
 # CTRL-e  move cursor to the end of the line
