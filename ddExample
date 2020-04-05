@@ -1,3 +1,0 @@
-sudo dd if=./test.txt of=/dev/sdb bs=10 count=1 seek=1G
-sudo dd if=/dev/sdb of=./test2.txt bs=10 count=1 skip=1G
-sudo dd if=/dev/zero of=/dev/sdb status=progress
